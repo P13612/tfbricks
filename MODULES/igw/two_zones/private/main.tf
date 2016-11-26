@@ -1,6 +1,4 @@
 variable "vpc_id" {}
-variable "subnet_private_1" {}
-variable "subnet_private_2" {}
 variable "vgwrouter_id" {}
 variable "project" {}
 variable "scope"   {}
