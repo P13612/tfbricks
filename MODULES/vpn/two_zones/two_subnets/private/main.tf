@@ -2,7 +2,7 @@ variable "vpc_id"       {}
 variable "subnet_private_1" {}
 variable "subnet_private_2" {}
 variable "paloalto"     {}
-variable "vpncidr"     {}
+variable "vpncidr"      {}
 variable "project"      {}
 variable "scope"        {}
 
@@ -28,7 +28,7 @@ resource "aws_vpn_gateway" "vgw" {
 resource "aws_customer_gateway" "cgw" {
     type = "ipsec.1"
     ip_address = "${var.paloalto}"
-    bgp_asn = "65000"
+    bgp_asn = "${var.ASN}"
     tags {
        Name  = "${var.project} VPN CGW to Palo Alto"
        VPN   = "Gateway to ${var.paloalto}"
