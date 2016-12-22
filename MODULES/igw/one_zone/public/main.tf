@@ -1,8 +1,3 @@
-variable "vpc_id" {}
-variable "subnet_public_1" {}
-variable "project" {}
-variable "scope"   {}
-
 resource "aws_internet_gateway" "webgw" {
     vpc_id = "${var.vpc_id}"
     tags {
