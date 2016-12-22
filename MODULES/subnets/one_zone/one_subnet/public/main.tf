@@ -1,3 +1,9 @@
+variable "vpc_cidr_block" {}
+variable "vpc_id"         {}
+variable "zonea"          {}
+variable "project"        {}
+variable "scope"          {}
+
 # ------------------ Public Subnets in two Zones -----------------------------
 #
 # Single Public Subnet in one Zone
