@@ -9,6 +9,10 @@ variable "scope"   {}
 #
 # Private Subnet 1 in Zone A
 
+data "template_file" "cidr1A" {
+    template = "${cidrsubnet("${var.vpc_cidr_block}", 2, 0)}"
+}
+
 resource "aws_subnet" "private_1" {
     vpc_id                  = "${var.vpc_id}"
     cidr_block              = "${cidrsubnet("${var.vpc_cidr_block}", 2, 0)}"
@@ -20,6 +24,10 @@ resource "aws_subnet" "private_1" {
 }
 
 #  Private Subnet 2 in Zone B
+
+data "template_file" "cidr2B" {
+    template = "${cidrsubnet("${var.vpc_cidr_block}", 2, 1)}"
+}
 
 resource "aws_subnet" "private_2" {
     vpc_id                  = "${var.vpc_id}"
